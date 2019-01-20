@@ -21,10 +21,10 @@ pipeline {
         }
 
 
-        stage ('Deployment Stage') {
+        stage ('Install Stage') {
             steps {
                 withMaven(maven : 'Localmaven') {
-                    sh 'mvn deploy'
+                    sh 'mvn Install'
                 }
             }
         }
