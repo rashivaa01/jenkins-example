@@ -2,6 +2,15 @@ pipeline {
     agent any
 
     stages {
+        stage ('Validate Stage') {
+
+            steps {
+                withMaven(maven : 'localmaven') {
+                    sh 'mvn validate'
+                }
+            }
+        }
+
         stage ('Compile Stage') {
 
             steps {
